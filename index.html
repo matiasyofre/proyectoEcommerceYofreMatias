@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Tech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <!-- Menu -->
+    <header id="navbar__style">
+      <div class="container__header">
+        <h1><a class="navbar-brand " href="#" onclick="renderInicio()">Mundo Tech</a></h1>
+        <a class="nav-link btn-open" href="#"><i class="bi bi-cart"></i></a>
+        <p class="temp"></p>
+      </div>
+      <nav>
+        <ul class="categorias">            
+          <li><a class="dropdown-item" href="#" onclick="renderTodo()">Todos los articulos</a></li>
+          <li><a class="dropdown-item" href="#" onclick="renderMovilidad()">Movilidad Urbana</a></li>
+          <li><a class="dropdown-item" href="#" onclick="renderSmartwatches()">Smartwatches</a></li>
+          <li><a class="dropdown-item" href="#" onclick="renderSmartphones()">Smartphones</a></li>
+          <li><a class="dropdown-item" href="#">Tablets</a></li>  
+          <li><a class="dropdown-item" href="#">Ofertas</a></li>     
+        </ul>
+      </nav>
+    </header>
+    <!-- Instancio la info principal y las card -->
+    <section class="main_instancia"></section>
+    <!-- Instancio el carrito OffCanvas -->
+    <section class="offcanvas_shop">
+      <a class="btn-close" href=""></a>
+      <div id="render_carrito" class="container">  
+        <h2>Carrito de compras</h2>        
+          <div id="tbody"></div>        
+        </table> 
+        <div class="container_compra">
+          <p class="precioArticulo">Monto total: <span id = "precioTotal">0</span> </p>
+          <button type="button" class="btn btn-info" onclick="solicitarCorreo()">Cargar datos</button>
+          <button type="button" class="btn btn-success" onclick="comprar()">Comprar</button>
+        </div>
+        
+      </div>      
+    </section>
+    <!--Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="./js/carrito.js"></script>
+    <script src="./js/productos.js"></script>
+    <script src="./js/render.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.24/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  </body>
+
+</html>
+
