@@ -1,35 +1,6 @@
 let carrito = [];
 let contenedor_carrito = document.getElementById('tbody')
 
-// Actualiza el carrito y local storage
-let actualizar_carrito = () => {
-    contenedor_carrito.innerHTML = "";
-    carrito.forEach((e => {
-        let fila = document.createElement("tr");
-        fila.innerHTML = `
-        <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="${e.img}" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                <h5 class="card-title">${e.nombre} $${e.precio}</h5>
-                <p class = "descripcion_card"> Unidades: ${e.und} </p>
-                <p class = "descripcion_card"> Precio total: $${e.precio * e.und} </p>
-                <button onclick="agregar_al_carrito(${e.id})"class=" borrar_item css_btn"><i class="bi bi-bag-plus"></i></button>
-                <button onclick="restar_item(${e.id})"class=" css_btn"><i class="bi bi-dash-circle"></i></button>
-                <button onclick="eliminar_del_carrito(${e.id})"class=" css_btn"><i class="bi bi-trash"></i></button>                
-                </div>
-            </div>
-        </div>
-        </div>`    
-        contenedor_carrito.appendChild(fila);  
-        localStorage.setItem('carrito', JSON.stringify(carrito));   
-    } ))
-    precioTotal.innerText = carrito.reduce((acc , e ) =>  acc + e.precio * e.und, 0);
-}
-
 // Cargar del LocalStorage
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -70,6 +41,34 @@ let agregar_al_carrito = (e) => {
     actualizar_carrito();
 }
 
+// Actualiza el carrito y local storage
+let actualizar_carrito = () => {
+    contenedor_carrito.innerHTML = "";
+    carrito.forEach((e => {
+        let fila = document.createElement("tr");
+        fila.innerHTML = `
+        <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="${e.img}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">${e.nombre} $${e.precio}</h5>
+                <p class = "descripcion_card"> Unidades: ${e.und} </p>
+                <p class = "descripcion_card"> Precio total: $${e.precio * e.und} </p>
+                <button onclick="agregar_al_carrito(${e.id})"class=" borrar_item css_btn"><i class="bi bi-bag-plus"></i></button>
+                <button onclick="restar_item(${e.id})"class=" css_btn"><i class="bi bi-dash-circle"></i></button>
+                <button onclick="eliminar_del_carrito(${e.id})"class=" css_btn"><i class="bi bi-trash"></i></button>                
+                </div>
+            </div>
+        </div>
+        </div>`    
+        contenedor_carrito.appendChild(fila);  
+        localStorage.setItem('carrito', JSON.stringify(carrito));   
+    } ))
+    precioTotal.innerText = carrito.reduce((acc , e ) =>  acc + e.precio * e.und, 0);
+}
 
 // Función eliminar
 let eliminar_del_carrito = (e_id) => {
