@@ -111,6 +111,7 @@ let renderSmartphones = () =>{
         btn_borrar.addEventListener("click", () => agregar_al_carrito(e.id)); 
     })        
 }
+
 //Renderizar todos los articulos
 let renderTodo = () => {
     main_instancia.innerHTML = ""
@@ -132,4 +133,15 @@ let renderTodo = () => {
         btn_borrar.addEventListener("click", () => agregar_al_carrito(e.id)); 
     })        
 }
+
+
+/*Renderizado de localizacion y temperatura */
+fetch('https://api.openweathermap.org/data/2.5/weather?q=Cordoba&units=metric&appid=b5938c061598cad0c3dfee411c014e40')
+    .then(response => response.json())
+    .then(data => {
+        let temperatura = data.main.temp;
+        let ubicacion = data.name;
+        let p_ubicacion = document.querySelector(".temp");
+        p_ubicacion.innerHTML=`<p><i class="bi bi-geo-alt"></i> Ubicación: ${ubicacion}, Argentina - Temperatura Actual: ${temperatura}°</p> `
+    })
 
