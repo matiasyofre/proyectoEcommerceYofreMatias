@@ -1,4 +1,4 @@
-/* SCRIPT UTILIZADO COMO INVENTARIO */
+/* Inventario de articulos */
 let listadoArticulos = [];
 class articulos{
     constructor (id , nombre, precio, stock, img, categoria,und ){

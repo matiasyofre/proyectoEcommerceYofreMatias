@@ -9,6 +9,7 @@
 body{
     height: 100vh;
 }
+
 /* Menu */
 #navbar__style{
     display: grid;
@@ -111,6 +112,7 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 230px;
 }
 .container_card{
     display: flex;
@@ -180,4 +182,9 @@ body{
     margin-right: 30%;
     color:#fff;
     text-align: center;
+}
+
+.footerPage{
+    background: linear-gradient(0deg, rgba(45,46,253,1) 0%,rgba(34,195,71,1) 100%);
+    color:#fff;
 }

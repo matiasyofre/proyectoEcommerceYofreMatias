@@ -85,7 +85,7 @@ let eliminar_del_carrito = (e_id) => {
         style: { background: 'linear-gradient(to right, blue, red)'}
     }).showToast();
 }
-// Función quitar aticulo
+// Función quitar articulo
 let restar_item = (e) => {
     let test = carrito.some((item)=> item.id === e);
     if(test){
