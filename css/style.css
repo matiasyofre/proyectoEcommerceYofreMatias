@@ -112,7 +112,7 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     grid-template-columns: repeat(2, 1fr);
-    padding-bottom: 230px;
+    padding-bottom: 250px;
 }
 .container_card{
     display: flex;
